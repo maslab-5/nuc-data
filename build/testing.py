@@ -1,22 +1,16 @@
 import time
 from camera import Camera
-from command import Com
-from command import Movement
-from command import LargeMotor
-from command import SmallMotor
-from command import Servo
-from map import Map
 import cv2
 import numpy as np
+from visual import Visual
 
 preBlur = 9
 postBlur = 7
 resizeWidth = 256
 resizeHeight = 192
 
-green_range = [[35, 20, 20], [90, 255, 255]]
+green_range = [[40, 20, 20], [90, 255, 255]]
 red_range = [[-10, 120, 70], [10, 255, 255]]
-filters = [green_range, red_range]
 
 approach_thresh = 30
 angle_thresh = 20
@@ -25,38 +19,47 @@ camera_bias = 10
 maxFPS = 30
 
 # map = Map("2024_mock_comp_1.txt")
-# camera = Camera(1, (resizeWidth, resizeHeight), preBlur, postBlur, filters[map.primaryRed], filters[not map.primaryRed])
-command = Com(115200)
+camera = Camera(0, resizeWidth, resizeHeight, preBlur, postBlur)
+vis = Visual(camera, -10, green_range, red_range)
+# command = Com(115200)
 
-time.sleep(0.1)
+while True:
+    img = camera.getHSVImage()
+    mask = vis.applyFilter(img, green_range)
+    cv2.waitKey(1)
+    cv2.imshow("", mask)
+    cv2.waitKey(1)
+    time.sleep(0.1)
+
+
 
 # command.setMotorEnable(LargeMotor.Chute, 1)
 # command.setMotorCurrent(LargeMotor.Chute, 100)
 # command.setMotorDirection(LargeMotor.Chute, 0)
-command.setMotorEnable(LargeMotor.Lift, 1)
-command.setMotorCurrent(LargeMotor.Lift, 40)
-command.setParameters(0.4, 0.0005)
-command.setOrigin(0, 0, 0)
+# command.setMotorEnable(LargeMotor.Lift, 1)
+# command.setMotorCurrent(LargeMotor.Lift, 40)
+# command.setParameters(0.4, 0.0005)
+# command.setOrigin(0, 0, 0)
 # command.motorMove(SmallMotor.Chute, 100, 0)
 
 # time.sleep(2)
-dir = 1
-while True:
-    command.setMotorDirection(LargeMotor.Lift, dir)
-    while command.getSwitch(4):
-        time.sleep(0.1)
-    while not command.getSwitch(4):
-        time.sleep(0.1)
+# dir = 1
+# while True:
+#     command.setMotorDirection(LargeMotor.Lift, dir)
+#     while command.getSwitch(4):
+#         time.sleep(0.1)
+#     while not command.getSwitch(4):
+#         time.sleep(0.1)
 
-    command.setMotorSpeed(LargeMotor.Lift, 50)
+#     command.setMotorSpeed(LargeMotor.Lift, 50)
 
-    while command.getSwitch(4):
-        time.sleep(0.1)
-    while not command.getSwitch(4):
-        time.sleep(0.1)
+#     while command.getSwitch(4):
+#         time.sleep(0.1)
+#     while not command.getSwitch(4):
+#         time.sleep(0.1)
     
-    command.setMotorSpeed(LargeMotor.Lift, 0)
-    dir = not dir
+#     command.setMotorSpeed(LargeMotor.Lift, 0)
+#     dir = not dir
 # time.sleep(4)
 # command.setMotorSpeed(LargeMotor.Chute, 0)
 
