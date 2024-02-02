@@ -3,12 +3,16 @@ import sys
 
 class Camera:
 
-    def __init__(self, vid_index, resizeWidth, resizeHeight, preBlur, postBlur):
-        self.camera = cv2.VideoCapture(vid_index, cv2.CAP_DSHOW)
+    def __init__(self, running_nuc, resizeWidth, resizeHeight, preBlur, postBlur):
+        if running_nuc:
+            self.camera = cv2.VideoCapture(0)
+        else:
+            self.camera = cv2.VideoCapture(1, cv2.CAP_DSHOW)
         self.resizeWidth = resizeWidth
         self.resizeHeight = resizeHeight
         self.preBlur = preBlur
         self.postBlur = postBlur
+        self.getHSVImage()
 
     def getHSVImage(self):
         ret, img = self.camera.read()

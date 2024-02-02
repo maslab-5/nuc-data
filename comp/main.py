@@ -30,10 +30,6 @@ red_range = [[-10, 120, 70], [10, 255, 255]]
 unitLength = 1452
 unitRotation = 1575
 
-camera_index = 1
-if running_nuc:
-    camera_index = 0
-
 camera_bias_x = -8
 
 roughStartX = 4.25
@@ -41,13 +37,12 @@ roughStartY = 1.75
 # roughStartX = 4
 # roughStartY = 2
 
-
 stackOrder = [2, 4, 3, 1, 0]
 maxLoop = 20
 dropTime = 150
 
 map = Map("mapright.txt", roughStartX, roughStartY)
-camera = Camera(camera_index, resizeWidth, resizeHeight, preBlur, postBlur)
+camera = Camera(running_nuc, resizeWidth, resizeHeight, preBlur, postBlur)
 command = Com(115200)
 visual = Visual(camera, camera_bias_x, green_range, red_range)
 act = Actions(map, command, visual, unitLength, unitRotation, maxLoop, dropTime)
