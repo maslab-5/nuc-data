@@ -169,6 +169,8 @@ class Actions:
         self.com.moveServo(Servo.Camera, 275)
         self.com.motorMove(SmallMotor.Gate, 100, 0)
         time.sleep(2)
+        self.com.startMovement(Movement.Line, -60)
+        self.waitStop()
         self.com.motorMove(SmallMotor.Gate, 0, 100)
         time.sleep(1)
         self.com.startMovement(Movement.Line, -50)
