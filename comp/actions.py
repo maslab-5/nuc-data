@@ -219,7 +219,7 @@ class Actions:
             time.sleep(0.6)
             self.com.setMotorDirection(LargeMotor.Lift, 0)
             self.waitStop()
-            time.sleep(0.25)
+            time.sleep(0.6)
             self.com.setMotorSpeed(LargeMotor.Lift, 0)
 
         self.com.setParameters(0.4, 0.00075)

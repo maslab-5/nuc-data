@@ -37,7 +37,7 @@ C, 2, 5, 2, G
 P, 5, 2, 5, 3
 
 # AprilTag
-A, 5, 2.5, G
+A, 5, 2.5, R
 
 # Starting box
 B, 0.5, 5.5
