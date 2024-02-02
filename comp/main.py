@@ -49,7 +49,7 @@ visual = Visual(camera, camera_bias_x, green_range, red_range)
 act = Actions(map, command, visual, unitLength, unitRotation, maxLoop, dropTime)
 
 def init():
-    command.startGyroCal(5000)
+    command.startGyroCal(1000)
     while not command.isGyroCal():
         time.sleep(1/maxLoop)
 
@@ -92,6 +92,9 @@ def init():
 
 
 init()
+
+while True:
+    ...
 
 act.turnToStack(Movement.Spin, stackOrder[0])
 act.moveUptoStack(stackOrder[0])
