@@ -178,7 +178,7 @@ class Actions:
         primary = not self.map.primaryRed
         for i in range(3):
             self.com.setMotorDirection(LargeMotor.Lift, 0)
-            self.com.setMotorSpeed(LargeMotor.Lift, 55)
+            self.com.setMotorSpeed(LargeMotor.Lift, 65)
             self.com.moveServo(Servo.Gate, 100)
 
             #TURN
@@ -189,20 +189,13 @@ class Actions:
             movement = None
             estimate = None
             if primary:
-                ang += math.pi/2
+                ang += math.pi/2.5
                 movement = Movement.ArcRight
-                estimate = self.unitRotation
             else:
-                ang -= math.pi/2
+                ang -= math.pi/2.5
                 movement = Movement.ArcLeft
-                estimate = -self.unitRotation
 
-            #start with estimate
             self.com.moveServo(Servo.Gate, 300)
-            self.com.startMovement(movement, estimate)
-            time.sleep(0.25)
-
-            #finish with gyro
             self.turnAbsolute(movement, ang)
             ##############
             primary = not primary

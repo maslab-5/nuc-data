@@ -27,7 +27,7 @@ resizeHeight = 192
 green_range = [[30, 30, 30], [90, 255, 255]]
 red_range = [[-10, 120, 70], [10, 255, 255]]
 
-unitLength = 1452
+unitLength = 1456
 unitRotation = 1575
 
 camera_bias_x = -8
@@ -57,7 +57,7 @@ def init():
 
     command.setMotorEnable(LargeMotor.Lift, 1)
     command.setMotorDirection(LargeMotor.Lift, 0)
-    command.setMotorCurrent(LargeMotor.Lift, 30)
+    command.setMotorCurrent(LargeMotor.Lift, 24)
     command.setMotorEnable(LargeMotor.Chute, 1)
     command.setMotorDirection(LargeMotor.Chute, 1)
     command.setMotorCurrent(LargeMotor.Chute, 100)
@@ -66,8 +66,8 @@ def init():
 
     command.moveServo(Servo.Camera, 275)
     command.moveServo(Servo.Gate, 100)
-    command.moveServo(Servo.LeftChute, 50)
-    command.moveServo(Servo.RightChute, 520)
+    command.moveServo(Servo.LeftChute, 47)
+    command.moveServo(Servo.RightChute, 523)
 
     command.motorMove(SmallMotor.Gate, 0, 100)
     command.setMotorSpeed(LargeMotor.Lift, 50)
@@ -134,7 +134,7 @@ act.turnToBearingNearest(Movement.Spin, math.pi)
 act.dropGround()
 
 act.turnToPositionNearest(Movement.Spin, 4, 3.5)
-act.moveToPosition(0.5, 2.5, 1)
+act.moveToPosition(4, 3.5, 1)
 act.turnToBearingNearest(Movement.Spin, math.pi)
 # act.waitDrop()
 act.dropPlatform()
