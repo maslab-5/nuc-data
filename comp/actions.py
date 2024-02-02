@@ -99,9 +99,11 @@ class Actions:
         x = self.map.stacks[index][0]
         y = self.map.stacks[index][1]
 
+        self.com.setParameters(0.6, 0.0075)
         self.turnToPositionNearest(movement, x, y)
 
     def moveUptoStack(self, index):
+        self.com.setParameters(0.7, 0.0075)
         x = self.map.stacks[index][0]
         y = self.map.stacks[index][1]
 
@@ -112,7 +114,7 @@ class Actions:
         self.waitStop()
 
     def alignCamera(self):
-        self.com.setParameters(0.35, 0.0075)
+        self.com.setParameters(0.3, 0.0075)
         time.sleep(0.5)
         if self.vis.getPercent(not self.map.primaryRed) < 2.4:
             self.com.startMovement(Movement.Spin, -int(self.unitRotation/8))

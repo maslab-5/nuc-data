@@ -25,7 +25,7 @@ resizeWidth = 256
 resizeHeight = 192
 
 green_range = [[40, 17, 17], [100, 255, 255]]
-red_range = [[-10, 17, 17], [10, 255, 255]]
+red_range = [[-10, 20, 20], [10, 255, 255]]
 
 unitLength = 1456
 unitRotation = 1575
@@ -64,8 +64,8 @@ def init():
 
     command.moveServo(Servo.Camera, 275)
     command.moveServo(Servo.Gate, 310)
-    command.moveServo(Servo.LeftChute, 33)
-    command.moveServo(Servo.RightChute, 530)
+    command.moveServo(Servo.LeftChute, 35)
+    command.moveServo(Servo.RightChute, 528)
 
     command.motorMove(SmallMotor.Gate, 0, 100)
     command.setMotorSpeed(LargeMotor.Lift, 50)
