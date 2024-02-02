@@ -107,8 +107,8 @@ act.grabStack(stackOrder[1])
 act.turnToBearingNearest(Movement.Spin, math.pi/2)
 act.sortStack()
 
-act.turnToPositionNearest(Movement.Spin, 2, 1)
-act.moveToPosition(2, 1, 1)
+act.turnToPositionNearest(Movement.Spin, 2, 0.9)
+act.moveToPosition(2, 0.9, 1)
 act.turnToStack(Movement.Spin, stackOrder[2])
 act.moveUptoStack(stackOrder[2])
 act.alignCamera()
@@ -133,7 +133,6 @@ act.sortStack()
 # act.grabStack(stackOrder[4])
 # act.turnToBearingNearest(Movement.Spin, 0)
 # act.sortStack()
-
 
 
 act.turnToPositionNearest(Movement.Spin, 1, 1)
