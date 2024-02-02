@@ -189,7 +189,7 @@ class Actions:
         self.com.motorMove(SmallMotor.Gate, 0, 0)
 
     def sortStack(self):
-        self.com.setParameters(0.7, 0.00075)
+        self.com.setParameters(0.8, 0.00075)
         self.com.setMotorEnable(LargeMotor.Lift, 1)
         x, y, ang = self.com.getPosition()
         primary = False
