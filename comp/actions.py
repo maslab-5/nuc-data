@@ -188,10 +188,10 @@ class Actions:
 
             movement = None
             if primary:
-                ang += math.pi/2.5
+                ang += math.pi
                 movement = Movement.PivotRight
             else:
-                ang -= math.pi/2.5
+                ang -= math.pi
                 movement = Movement.PivotLeft
 
             self.com.moveServo(Servo.Gate, 300)
