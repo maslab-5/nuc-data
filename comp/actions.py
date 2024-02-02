@@ -198,7 +198,7 @@ class Actions:
         primary = False
         for i in range(3):
             self.com.setMotorDirection(LargeMotor.Lift, 0)
-            self.com.setMotorSpeed(LargeMotor.Lift, 45)
+            self.com.setMotorSpeed(LargeMotor.Lift, 40)
             self.com.moveServo(Servo.Gate, 90)
 
             #TURN
@@ -224,7 +224,7 @@ class Actions:
             time.sleep(0.75)
             self.com.startMovement(Movement.Line, 75)
             time.sleep(0.6)
-            self.com.setMotorSpeed(LargeMotor.Lift, 45)
+            self.com.setMotorSpeed(LargeMotor.Lift, 40)
             self.com.setMotorDirection(LargeMotor.Lift, 0)
             self.waitStop()
             time.sleep(0.6)
@@ -258,7 +258,7 @@ class Actions:
 
         self.com.setMotorEnable(LargeMotor.Lift, 1)
         self.com.setMotorDirection(LargeMotor.Lift, 0)
-        self.com.setMotorSpeed(LargeMotor.Lift, 65)
+        self.com.setMotorSpeed(LargeMotor.Lift, 45)
         time.sleep(1)
         self.com.setMotorSpeed(LargeMotor.Chute, 100)
         time.sleep(6.6)
