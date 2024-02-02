@@ -24,7 +24,7 @@ postBlur = 7
 resizeWidth = 256
 resizeHeight = 192
 
-green_range = [[40, 30, 30], [80, 255, 255]]
+green_range = [[30, 20, 20], [100, 255, 255]]
 red_range = [[-10, 120, 70], [10, 255, 255]]
 
 unitLength = 1452
@@ -130,7 +130,7 @@ act.sortStack()
 
 act.turnToPositionNearest(Movement.Spin, 4, 2)
 act.moveToPosition(4, 2, 1)
-act.turnToBearngNearest(Movement.Spin, math.pi)
+act.turnToBearingNearest(Movement.Spin, math.pi)
 act.dropGround()
 
 act.turnToPositionNearest(Movement.Spin, 4, 3.5)
