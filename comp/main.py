@@ -42,7 +42,7 @@ stackOrder = [4, 2, 3, 1, 0]
 maxLoop = 24
 dropTime = 150
 
-map = Map("mapleft.txt", roughStartX, roughStartY)
+map = Map("mapright.txt", roughStartX, roughStartY)
 camera = Camera(running_nuc, resizeWidth, resizeHeight, preBlur, postBlur)
 command = Com(115200)
 visual = Visual(camera, camera_bias_x, green_range, red_range)
@@ -66,8 +66,8 @@ def init():
 
     command.moveServo(Servo.Camera, 275)
     command.moveServo(Servo.Gate, 310)
-    command.moveServo(Servo.LeftChute, 39)
-    command.moveServo(Servo.RightChute, 524)
+    command.moveServo(Servo.LeftChute, 37)
+    command.moveServo(Servo.RightChute, 525)
 
     command.motorMove(SmallMotor.Gate, 0, 100)
     command.setMotorSpeed(LargeMotor.Lift, 50)
