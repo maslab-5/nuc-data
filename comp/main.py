@@ -24,7 +24,7 @@ postBlur = 7
 resizeWidth = 256
 resizeHeight = 192
 
-green_range = [[40, 40, 40], [80, 255, 255]]
+green_range = [[40, 30, 30], [80, 255, 255]]
 red_range = [[-10, 120, 70], [10, 255, 255]]
 
 unitLength = 1452
