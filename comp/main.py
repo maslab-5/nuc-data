@@ -25,7 +25,7 @@ resizeWidth = 256
 resizeHeight = 192
 
 green_range = [[40, 30, 30], [90, 255, 255]]
-red_range = [[-10, 120, 70], [10, 255, 255]]
+red_range = [[-10, 60, 40], [10, 255, 255]]
 
 unitLength = 1456
 unitRotation = 1575
