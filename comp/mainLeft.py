@@ -64,8 +64,8 @@ def init():
 
     command.moveServo(Servo.Camera, 275)
     command.moveServo(Servo.Gate, 310)
-    command.moveServo(Servo.LeftChute, 37)
-    command.moveServo(Servo.RightChute, 526)
+    command.moveServo(Servo.LeftChute, 35)
+    command.moveServo(Servo.RightChute, 528)
 
     command.motorMove(SmallMotor.Gate, 0, 100)
     command.setMotorSpeed(LargeMotor.Lift, 50)
