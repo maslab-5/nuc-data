@@ -2,11 +2,8 @@ import time
 from camera import Camera
 from command import Com
 from command import Movement
-from command import Motor
 from command import SmallMotor
 from map import Map
-import cv2
-import math
 import numpy as np
 
 preBlur = 9

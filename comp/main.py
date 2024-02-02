@@ -39,7 +39,7 @@ roughStartY = 0.75
 
 # stackOrder = [2, 4, 3, 1, 0]
 stackOrder = [4, 2, 3, 1, 0]
-maxLoop = 20
+maxLoop = 24
 dropTime = 150
 
 map = Map("mapleft.txt", roughStartX, roughStartY)

@@ -33,7 +33,6 @@ class Visual:
     def getPercent(self, topRed):
         buf = self.camera.getHSVImage()
         mask = self.applyFilter(self.camera.getHSVImage(), self.colorFilters[topRed])
-        print(np.sum(mask)/self.total_mask)
         return np.sum(mask)/self.total_mask
 
     def getAngle(self):

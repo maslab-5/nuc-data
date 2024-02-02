@@ -150,7 +150,7 @@ class Actions:
             if per >= 22:
                 angle = self.vis.getAngle()
                 self.com.setParameters(0.2, 0.0006)
-                self.com.startMovement(Movement.Line, 240)
+                self.com.startMovement(Movement.Line, 244)
                 break
 
             time.sleep(1/self.maxLoop)
