@@ -147,10 +147,10 @@ class Actions:
 
             per = self.vis.getPercent(not self.map.primaryRed)
 
-            if per >= 22:
+            if per >= 34:
                 angle = self.vis.getAngle()
                 self.com.setParameters(0.2, 0.0006)
-                self.com.startMovement(Movement.Line, 244)
+                self.com.startMovement(Movement.Line, 245)
                 break
 
             time.sleep(1/self.maxLoop)
@@ -169,6 +169,12 @@ class Actions:
         self.com.moveServo(Servo.Camera, 275)
         self.com.motorMove(SmallMotor.Gate, 100, 0)
         time.sleep(2)
+        self.com.motorMove(SmallMotor.Gate, 0, 100)
+        time.sleep(1)
+        self.com.startMovement(Movement.Spin, self.unitRotation/12)
+        self.waitStop()
+        self.com.motorMove(SmallMotor.Gate, 100, 0)
+        time.sleep(2)
         self.com.motorMove(SmallMotor.Gate, 0, 0)
 
     def sortStack(self):
@@ -178,8 +184,8 @@ class Actions:
         primary = not self.map.primaryRed
         for i in range(3):
             self.com.setMotorDirection(LargeMotor.Lift, 0)
-            self.com.setMotorSpeed(LargeMotor.Lift, 65)
-            self.com.moveServo(Servo.Gate, 100)
+            self.com.setMotorSpeed(LargeMotor.Lift, 40)
+            self.com.moveServo(Servo.Gate, 90)
 
             #TURN
             ##############
@@ -194,7 +200,7 @@ class Actions:
                 ang -= math.pi/2
                 movement = Movement.ArcLeft
 
-            self.com.moveServo(Servo.Gate, 300)
+            self.com.moveServo(Servo.Gate, 310)
             self.turnAbsolute(movement, ang)
             ##############
             primary = not primary
@@ -236,7 +242,7 @@ class Actions:
 
         self.com.setMotorEnable(LargeMotor.Lift, 1)
         self.com.setMotorDirection(LargeMotor.Lift, 0)
-        self.com.setMotorSpeed(LargeMotor.Lift, 55)
+        self.com.setMotorSpeed(LargeMotor.Lift, 45)
         time.sleep(1)
         self.com.setMotorSpeed(LargeMotor.Chute, 100)
         time.sleep(7.4)
