@@ -258,7 +258,7 @@ class Actions:
 
         self.com.setMotorEnable(LargeMotor.Lift, 1)
         self.com.setMotorDirection(LargeMotor.Lift, 0)
-        self.com.setMotorSpeed(LargeMotor.Lift, 45)
+        self.com.setMotorSpeed(LargeMotor.Lift, 75)
         time.sleep(1)
         self.com.setMotorSpeed(LargeMotor.Chute, 100)
         time.sleep(6.6)
