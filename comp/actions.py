@@ -187,13 +187,12 @@ class Actions:
             time.sleep(0.6)
 
             movement = None
-            estimate = None
             if primary:
                 ang += math.pi/2.5
-                movement = Movement.ArcRight
+                movement = Movement.PivotRight
             else:
                 ang -= math.pi/2.5
-                movement = Movement.ArcLeft
+                movement = Movement.PivotLeft
 
             self.com.moveServo(Servo.Gate, 300)
             self.turnAbsolute(movement, ang)
