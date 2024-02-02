@@ -172,7 +172,7 @@ class Actions:
         self.com.motorMove(SmallMotor.Gate, 0, 0)
 
     def sortStack(self):
-        self.com.setParameters(1, 0.00075)
+        self.com.setParameters(0.7, 0.00075)
         self.com.setMotorEnable(LargeMotor.Lift, 1)
         x, y, ang = self.com.getPosition()
         primary = not self.map.primaryRed
@@ -188,11 +188,11 @@ class Actions:
 
             movement = None
             if primary:
-                ang += math.pi
-                movement = Movement.PivotRight
+                ang += math.pi/2
+                movement = Movement.ArcRight
             else:
-                ang -= math.pi
-                movement = Movement.PivotLeft
+                ang -= math.pi/2
+                movement = Movement.ArcLeft
 
             self.com.moveServo(Servo.Gate, 300)
             self.turnAbsolute(movement, ang)
