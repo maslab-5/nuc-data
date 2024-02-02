@@ -171,7 +171,7 @@ class Actions:
         time.sleep(2)
         self.com.motorMove(SmallMotor.Gate, 0, 100)
         time.sleep(1)
-        self.com.startMovement(Movement.Spin, self.unitRotation/12)
+        self.com.startMovement(Movement.Spin, int(self.unitRotation/12))
         self.waitStop()
         self.com.motorMove(SmallMotor.Gate, 100, 0)
         time.sleep(2)
