@@ -37,8 +37,8 @@ roughStartY = 1.75
 # roughStartX = 0.75
 # roughStartY = 0.75
 
-# stackOrder = [2, 4, 3, 1, 0]
-stackOrder = [4, 2, 3, 1, 0]
+stackOrder = [2, 4, 3, 1, 0]
+# stackOrder = [3, 2, 4, 1, 0]
 maxLoop = 24
 dropTime = 150
 
