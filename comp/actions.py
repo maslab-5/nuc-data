@@ -148,9 +148,9 @@ class Actions:
                 break
 
             per = self.vis.getPercent(not self.map.primaryRed)
-            thresh = 22
+            thresh = 24
             if self.map.primaryRed:
-                28
+                thresh = 26
 
             if per >= thresh:
                 angle = self.vis.getAngle()
