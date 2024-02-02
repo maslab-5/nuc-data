@@ -18,20 +18,20 @@ C, 2, 2, 0, G
 C, 2, 2, 1, R
 C, 2, 2, 2, G
 
-# Block stack at (4, 2)
-C, 4, 2, 0, G
-C, 4, 2, 1, R
-C, 4, 2, 2, G
+# Block stack at (4, 3)
+C, 4, 3, 0, G
+C, 4, 3, 1, R
+C, 4, 3, 2, G
 
 # Block stack at (1, 4)
 C, 1, 4, 0, G
 C, 1, 4, 1, R
 C, 1, 4, 2, G
 
-# Block stack at (3, 4)
-C, 3, 4, 0, G
-C, 3, 4, 1, R
-C, 3, 4, 2, G
+# Block stack at (2, 4)
+C, 2, 4, 0, G
+C, 2, 4, 1, R
+C, 2, 4, 2, G
 
 # Central platform
 P, 0, 2, 0, 3
@@ -43,4 +43,4 @@ A, 0, 2.5, R
 B, 4.5, 3.5
 
 # Robot starting location
-R, 4.5, 3.5, 270
+R, 4.5, 3.5, 180

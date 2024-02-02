@@ -140,7 +140,7 @@ class Actions:
         self.com.setParameters(0.25, 0.0075)
         angle = 0
         self.com.moveServo(Servo.Camera, 0)
-        self.com.startMovement(Movement.Line, 1400)
+        self.com.startMovement(Movement.Line, 1300)
         while True:
             if not self.com.isMoving():
                 break
@@ -253,12 +253,12 @@ class Actions:
         self.com.setMotorSpeed(LargeMotor.Lift, 45)
         time.sleep(1)
         self.com.setMotorSpeed(LargeMotor.Chute, 100)
-        time.sleep(7.4)
+        time.sleep(7.2)
         self.com.setMotorSpeed(LargeMotor.Chute, 0)
         self.com.setParameters(0.3, 0.00075)
-        self.com.setMotorCurrent(LargeMotor.Left, 20)
-        self.com.setMotorCurrent(LargeMotor.Right, 20)
-        self.com.startMovement(Movement.Line, -700)
+        self.com.setMotorCurrent(LargeMotor.Left, 22)
+        self.com.setMotorCurrent(LargeMotor.Right, 22)
+        self.com.startMovement(Movement.Line, -1000)
         self.waitStop()
 
         self.com.setMotorCurrent(LargeMotor.Chute, 11)
