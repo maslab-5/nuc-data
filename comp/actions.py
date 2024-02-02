@@ -140,18 +140,18 @@ class Actions:
         self.com.setParameters(0.3, 0.0075)
         angle = 0
         self.com.moveServo(Servo.Camera, 0)
-        self.com.startMovement(Movement.Line, 1500)
+        # self.com.startMovement(Movement.Line, 1500)
         while True:
-            if not self.com.isMoving():
-                break
+            # if not self.com.isMoving():
+            #     break
 
             per = self.vis.getPercent(not self.map.primaryRed)
 
-            if per >= 30:
-                angle = self.vis.getAngle()
-                self.com.setParameters(0.2, 0.0006)
-                self.com.startMovement(Movement.Line, 240)
-                break
+            # if per >= 30:
+            #     angle = self.vis.getAngle()
+            #     self.com.setParameters(0.2, 0.0006)
+            #     self.com.startMovement(Movement.Line, 240)
+            #     break
 
             time.sleep(1/self.maxLoop)
         
