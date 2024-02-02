@@ -27,7 +27,7 @@ resizeHeight = 192
 green_range = [[40, 17, 17], [100, 255, 255]]
 red_range = [[-10, 20, 20], [10, 255, 255]]
 
-unitLength = 1456
+unitLength = 1462
 unitRotation = 1575
 
 camera_bias_x = -8
