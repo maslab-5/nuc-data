@@ -230,8 +230,8 @@ class Actions:
             time.sleep(0.6)
 
         self.com.setMotorSpeed(LargeMotor.Lift, 0)
-        self.com.setParameters(0.6, 0.00075)
         self.com.setMotorEnable(LargeMotor.Lift, 0)
+        self.com.setParameters(0.6, 0.00075)
 
     def dropGround(self):
         self.com.setMotorEnable(LargeMotor.Lift, 0)
