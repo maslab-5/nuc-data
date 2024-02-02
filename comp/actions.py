@@ -192,7 +192,7 @@ class Actions:
         primary = False
         for i in range(3):
             self.com.setMotorDirection(LargeMotor.Lift, 0)
-            self.com.setMotorSpeed(LargeMotor.Lift, 40)
+            self.com.setMotorSpeed(LargeMotor.Lift, 45)
             self.com.moveServo(Servo.Gate, 90)
 
             #TURN
