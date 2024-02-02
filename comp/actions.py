@@ -179,6 +179,10 @@ class Actions:
         # self.waitStop()
         # self.com.motorMove(SmallMotor.Gate, 100, 0)
         # time.sleep(2)
+        self.com.motorMove(SmallMotor.Gate, 0, 100)
+        time.sleep(2)
+        self.com.motorMove(SmallMotor.Gate, 100, 0)
+        time.sleep(2)
         self.com.motorMove(SmallMotor.Gate, 0, 0)
 
     def sortStack(self):
