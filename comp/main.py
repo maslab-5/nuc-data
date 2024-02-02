@@ -32,16 +32,17 @@ unitRotation = 1575
 
 camera_bias_x = -8
 
-roughStartX = 4.25
-roughStartY = 1.75
-# roughStartX = 4
-# roughStartY = 2
+# roughStartX = 4.25
+# roughStartY = 1.75
+roughStartX = 0.75
+roughStartY = 0.75
 
-stackOrder = [2, 4, 3, 1, 0]
+# stackOrder = [2, 4, 3, 1, 0]
+stackOrder = [4, 2, 3, 1, 0]
 maxLoop = 20
 dropTime = 150
 
-map = Map("mapright.txt", roughStartX, roughStartY)
+map = Map("mapleft.txt", roughStartX, roughStartY)
 camera = Camera(running_nuc, resizeWidth, resizeHeight, preBlur, postBlur)
 command = Com(115200)
 visual = Visual(camera, camera_bias_x, green_range, red_range)
@@ -96,21 +97,21 @@ act.turnToStack(Movement.Spin, stackOrder[0])
 act.moveUptoStack(stackOrder[0])
 act.alignCamera()
 act.grabStack(stackOrder[0])
-act.turnToPositionNearest(Movement.Spin, 1.5, 0)
+act.turnToPositionNearest(Movement.Spin, 0, 3)
 act.sortStack()
 
 act.turnToStack(Movement.Spin, stackOrder[1])
 act.moveUptoStack(stackOrder[1])
 act.alignCamera()
 act.grabStack(stackOrder[1])
-act.turnToPositionNearest(Movement.Spin, 2.5, 2.5)
+act.turnToPositionNearest(Movement.Spin, 4, 5)
 act.sortStack()
 
 act.turnToStack(Movement.Spin, stackOrder[2])
 act.moveUptoStack(stackOrder[2])
 act.alignCamera()
 act.grabStack(stackOrder[2])
-act.turnToPositionNearest(Movement.Spin, 2.5, 2.5)
+act.turnToPositionNearest(Movement.Spin, 3, 3)
 act.sortStack()
 
 # act.turnToStack(Movement.Spin,stackOrder[3])
@@ -127,12 +128,12 @@ act.sortStack()
 
 
 
-act.turnToPositionNearest(Movement.Spin, 2, 2)
-act.moveToPosition(2, 2, 1)
+act.turnToPositionNearest(Movement.Spin, 4, 2)
+act.moveToPosition(4, 2, 1)
 act.turnToBearngNearest(Movement.Spin, math.pi)
 act.dropGround()
 
-act.turnToPositionNearest(Movement.Spin, 0.5, 2.5)
+act.turnToPositionNearest(Movement.Spin, 4, 3.5)
 act.moveToPosition(0.5, 2.5, 1)
 act.turnToBearingNearest(Movement.Spin, math.pi)
 # act.waitDrop()
