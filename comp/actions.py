@@ -178,7 +178,7 @@ class Actions:
         primary = not self.map.primaryRed
         for i in range(3):
             self.com.setMotorDirection(LargeMotor.Lift, 0)
-            self.com.setMotorSpeed(LargeMotor.Lift, 50)
+            self.com.setMotorSpeed(LargeMotor.Lift, 55)
             self.com.moveServo(Servo.Gate, 100)
 
             #TURN
@@ -210,7 +210,7 @@ class Actions:
             self.com.setMotorDirection(LargeMotor.Lift, 1)
             time.sleep(0.75)
             self.com.startMovement(Movement.Line, 75)
-            time.sleep(0.5)
+            time.sleep(0.6)
             self.com.setMotorDirection(LargeMotor.Lift, 0)
             self.waitStop()
             time.sleep(0.25)

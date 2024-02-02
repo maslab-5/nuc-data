@@ -57,7 +57,7 @@ def init():
 
     command.setMotorEnable(LargeMotor.Lift, 1)
     command.setMotorDirection(LargeMotor.Lift, 0)
-    command.setMotorCurrent(LargeMotor.Lift, 22)
+    command.setMotorCurrent(LargeMotor.Lift, 30)
     command.setMotorEnable(LargeMotor.Chute, 1)
     command.setMotorDirection(LargeMotor.Chute, 1)
     command.setMotorCurrent(LargeMotor.Chute, 100)
