@@ -263,6 +263,8 @@ class Actions:
         self.com.setMotorSpeed(LargeMotor.Chute, 100)
         time.sleep(6.6)
         self.com.setMotorSpeed(LargeMotor.Chute, 0)
+        self.com.startMovement(Movement.Line, -450)
+        self.waitStop()
         self.com.setParameters(0.3, 0.00075)
         self.com.setMotorCurrent(LargeMotor.Left, 22)
         self.com.setMotorCurrent(LargeMotor.Right, 22)
