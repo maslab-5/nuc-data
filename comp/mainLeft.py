@@ -47,7 +47,7 @@ visual = Visual(camera, camera_bias_x, green_range, red_range)
 act = Actions(map, command, visual, unitLength, unitRotation, maxLoop, dropTime)
 
 def init():
-    command.startGyroCal(1000)
+    command.startGyroCal(5000)
     while not command.isGyroCal():
         time.sleep(1/maxLoop)
 
@@ -55,7 +55,7 @@ def init():
 
     command.setMotorEnable(LargeMotor.Lift, 1)
     command.setMotorDirection(LargeMotor.Lift, 0)
-    command.setMotorCurrent(LargeMotor.Lift, 22)
+    command.setMotorCurrent(LargeMotor.Lift, 38)
     command.setMotorEnable(LargeMotor.Chute, 1)
     command.setMotorDirection(LargeMotor.Chute, 1)
     command.setMotorCurrent(LargeMotor.Chute, 100)

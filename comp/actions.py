@@ -198,7 +198,7 @@ class Actions:
         primary = False
         for i in range(3):
             self.com.setMotorDirection(LargeMotor.Lift, 0)
-            self.com.setMotorSpeed(LargeMotor.Lift, 45)
+            self.com.setMotorSpeed(LargeMotor.Lift, 55)
             self.com.moveServo(Servo.Gate, 90)
 
             #TURN
@@ -219,16 +219,18 @@ class Actions:
             ##############
             primary = not primary
 
+            self.com.setMotorSpeed(LargeMotor.Lift, 35)
             self.com.setMotorDirection(LargeMotor.Lift, 1)
             time.sleep(0.75)
             self.com.startMovement(Movement.Line, 75)
             time.sleep(0.6)
+            self.com.setMotorSpeed(LargeMotor.Lift, 55)
             self.com.setMotorDirection(LargeMotor.Lift, 0)
             self.waitStop()
             time.sleep(0.6)
-            self.com.setMotorSpeed(LargeMotor.Lift, 0)
 
-        self.com.setParameters(0.4, 0.00075)
+        self.com.setMotorSpeed(LargeMotor.Lift, 0)
+        self.com.setParameters(0.6, 0.00075)
         self.com.setMotorEnable(LargeMotor.Lift, 0)
 
     def dropGround(self):
@@ -256,7 +258,7 @@ class Actions:
 
         self.com.setMotorEnable(LargeMotor.Lift, 1)
         self.com.setMotorDirection(LargeMotor.Lift, 0)
-        self.com.setMotorSpeed(LargeMotor.Lift, 45)
+        self.com.setMotorSpeed(LargeMotor.Lift, 65)
         time.sleep(1)
         self.com.setMotorSpeed(LargeMotor.Chute, 100)
         time.sleep(6.6)

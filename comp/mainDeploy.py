@@ -32,8 +32,8 @@ unitRotation = 1575
 
 camera_bias_x = -8
 
-roughStartX = 4
-roughStartY = 3
+roughStartX = 2
+roughStartY = 1
 
 stackOrder = [2, 4, 3, 1, 0]
 
@@ -47,7 +47,7 @@ visual = Visual(camera, camera_bias_x, green_range, red_range)
 act = Actions(map, command, visual, unitLength, unitRotation, maxLoop, dropTime)
 
 def init():
-    command.startGyroCal(5000)
+    command.startGyroCal(3000)
     while not command.isGyroCal():
         time.sleep(1/maxLoop)
 
@@ -91,30 +91,30 @@ def init():
 
 init()
 
-act.turnToStack(Movement.Spin, stackOrder[0])
-act.moveUptoStack(stackOrder[0])
-act.alignCamera()
-act.grabStack(stackOrder[0])
-act.turnToBearingNearest(Movement.Spin, -3*math.pi/4)
-act.sortStack()
+# act.turnToStack(Movement.Spin, stackOrder[0])
+# act.moveUptoStack(stackOrder[0])
+# act.alignCamera()
+# act.grabStack(stackOrder[0])
+# act.turnToBearingNearest(Movement.Spin, -3*math.pi/4)
+# act.sortStack()
 
-act.turnToPositionNearest(Movement.Spin, 2, 2)
-act.moveToPosition(2, 2, 1)
-act.turnToStack(Movement.Spin, stackOrder[1])
-act.moveUptoStack(stackOrder[1])
-act.alignCamera()
-act.grabStack(stackOrder[1])
-act.turnToBearingNearest(Movement.Spin, math.pi/2)
-act.sortStack()
+# act.turnToPositionNearest(Movement.Spin, 2, 2)
+# act.moveToPosition(2, 2, 1)
+# act.turnToStack(Movement.Spin, stackOrder[1])
+# act.moveUptoStack(stackOrder[1])
+# act.alignCamera()
+# act.grabStack(stackOrder[1])
+# act.turnToBearingNearest(Movement.Spin, math.pi/2)
+# act.sortStack()
 
-act.turnToPositionNearest(Movement.Spin, 2, 0.9)
-act.moveToPosition(2, 0.9, 1)
-act.turnToStack(Movement.Spin, stackOrder[2])
-act.moveUptoStack(stackOrder[2])
-act.alignCamera()
-act.grabStack(stackOrder[2])
-act.turnToBearingNearest(Movement.Spin, math.pi/2)
-act.sortStack()
+# act.turnToPositionNearest(Movement.Spin, 2, 0.9)
+# act.moveToPosition(2, 0.9, 1)
+# act.turnToStack(Movement.Spin, stackOrder[2])
+# act.moveUptoStack(stackOrder[2])
+# act.alignCamera()
+# act.grabStack(stackOrder[2])
+# act.turnToBearingNearest(Movement.Spin, math.pi/2)
+# act.sortStack()
 
 # act.turnToPositionNearest(Movement.Spin, 2, 2)
 # act.moveToPosition(2, 2, 1)
