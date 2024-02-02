@@ -8,6 +8,15 @@ import math
 import time
 import os
 
+# updating code
+# git add .
+# git commit -m "message"
+# git push
+
+# getting code
+# cd robot/nuc-data
+# git pull
+
 running_nuc = os.name != 'nt'
 
 preBlur = 9
@@ -128,10 +137,10 @@ act.moveToPosition(2, 2, 1)
 act.turnToBearngNearest(Movement.Spin, math.pi)
 act.dropGround()
 
-# act.waitDrop()
 act.turnToPositionNearest(Movement.Spin, 0.5, 2.5)
 act.moveToPosition(0.5, 2.5, 1)
 act.turnToBearingNearest(Movement.Spin, math.pi)
+# act.waitDrop()
 act.dropPlatform()
 
 camera.destroy()
