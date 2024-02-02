@@ -150,7 +150,7 @@ class Actions:
             if per >= 34:
                 angle = self.vis.getAngle()
                 self.com.setParameters(0.2, 0.0006)
-                self.com.startMovement(Movement.Line, 228)
+                self.com.startMovement(Movement.Line, 232)
                 break
 
             time.sleep(1/self.maxLoop)
@@ -171,7 +171,7 @@ class Actions:
         time.sleep(2)
         self.com.motorMove(SmallMotor.Gate, 0, 100)
         time.sleep(1)
-        self.com.startMovement(Movement.Line, -34)
+        self.com.startMovement(Movement.Line, -50)
         self.waitStop()
         self.com.startMovement(Movement.Spin, int(self.unitRotation/12))
         self.waitStop()
