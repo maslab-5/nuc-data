@@ -87,6 +87,7 @@ class Actions:
         self.turnToBearingNearest(movement, math.atan2(dY, dX))
 
     def moveToPosition(self, x, y, dir):
+        self.com.setParameters(0.7, 0.0075)
         robX, robY, ang = self.com.getPosition()
         dist = math.sqrt(pow(robX-x*self.unitLength, 2) + pow(robY-self.unitLength*y, 2))
         if not dir:
@@ -185,7 +186,7 @@ class Actions:
         # self.com.motorMove(SmallMotor.Gate, 100, 0)
         # time.sleep(2)
         self.com.motorMove(SmallMotor.Gate, 0, 100)
-        time.sleep(1)
+        time.sleep(0.7)
         self.com.motorMove(SmallMotor.Gate, 100, 0)
         time.sleep(2)
         self.com.motorMove(SmallMotor.Gate, 0, 0)
@@ -240,7 +241,7 @@ class Actions:
         self.waitStop()
 
         self.com.moveServo(Servo.LeftChute, 50)
-        self.com.setParameters(0.6, 0.00075)
+        self.com.setParameters(0.7, 0.00075)
         time.sleep(0.5)
 
     def waitDrop(self):
@@ -258,22 +259,22 @@ class Actions:
         self.com.setMotorSpeed(LargeMotor.Lift, 45)
         time.sleep(1)
         self.com.setMotorSpeed(LargeMotor.Chute, 100)
-        time.sleep(7.2)
+        time.sleep(6.6)
         self.com.setMotorSpeed(LargeMotor.Chute, 0)
         self.com.setParameters(0.3, 0.00075)
         self.com.setMotorCurrent(LargeMotor.Left, 22)
         self.com.setMotorCurrent(LargeMotor.Right, 22)
-        self.com.startMovement(Movement.Line, -1000)
+        self.com.startMovement(Movement.Line, -850)
         self.waitStop()
 
         self.com.setMotorCurrent(LargeMotor.Chute, 11)
         self.com.setMotorDirection(LargeMotor.Chute, 0)
         self.com.setMotorSpeed(LargeMotor.Chute, 17)
-        time.sleep(6)
+        time.sleep(4)
         self.com.setMotorSpeed(LargeMotor.Chute, 0)
         self.com.setMotorSpeed(LargeMotor.Lift, 25)
         self.com.setMotorDirection(LargeMotor.Lift, 1)
-        time.sleep(1)
+        time.sleep(0.8)
         self.com.setMotorEnable(LargeMotor.Lift, 0)
         self.com.setMotorSpeed(LargeMotor.Lift, 0)
         self.com.moveServo(Servo.RightChute, 0)
