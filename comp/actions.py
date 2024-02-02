@@ -147,7 +147,7 @@ class Actions:
 
             per = self.vis.getPercent(not self.map.primaryRed)
 
-            if per >= 34:
+            if per >= 26:
                 angle = self.vis.getAngle()
                 self.com.setParameters(0.2, 0.0006)
                 self.com.startMovement(Movement.Line, 232)
