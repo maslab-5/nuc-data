@@ -40,7 +40,7 @@ stackOrder = [4, 2, 3, 1, 0]
 maxLoop = 24
 dropTime = 150
 
-map = Map("mapright.txt", roughStartX, roughStartY)
+map = Map("mapleft.txt", roughStartX, roughStartY)
 camera = Camera(running_nuc, resizeWidth, resizeHeight, preBlur, postBlur)
 command = Com(115200)
 visual = Visual(camera, camera_bias_x, green_range, red_range)
@@ -64,8 +64,8 @@ def init():
 
     command.moveServo(Servo.Camera, 275)
     command.moveServo(Servo.Gate, 310)
-    command.moveServo(Servo.LeftChute, 35)
-    command.moveServo(Servo.RightChute, 528)
+    command.moveServo(Servo.LeftChute, 33)
+    command.moveServo(Servo.RightChute, 530)
 
     command.motorMove(SmallMotor.Gate, 0, 100)
     command.setMotorSpeed(LargeMotor.Lift, 50)
@@ -106,7 +106,7 @@ act.turnToStack(Movement.Spin, stackOrder[1])
 act.moveUptoStack(stackOrder[1])
 act.alignCamera()
 act.grabStack(stackOrder[1])
-act.turnToBearingNearest(Movement.Spin, -3*math.pi/4)
+act.turnToBearingNearest(Movement.Spin, -math.pi/4)
 act.sortStack()
 
 act.turnToPositionNearest(Movement.Spin, 3, 2)
@@ -137,8 +137,8 @@ act.moveToPosition(4, 2, 1)
 act.turnToBearingNearest(Movement.Spin, math.pi/2)
 act.dropGround()
 
-act.turnToPositionNearest(Movement.Spin, 4, 3.5)
-act.moveToPosition(4, 3.5, 1)
+act.turnToPositionNearest(Movement.Spin, 3.5, 3.5)
+act.moveToPosition(3.5, 3.5, 1)
 act.turnToBearingNearest(Movement.Spin, math.pi)
 # act.waitDrop()
 act.dropPlatform()
