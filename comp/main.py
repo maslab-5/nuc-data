@@ -40,7 +40,7 @@ roughStartY = 1.75
 stackOrder = [2, 4, 3, 1, 0]
 # stackOrder = [3, 2, 4, 1, 0]
 maxLoop = 24
-dropTime = 150
+dropTime = 30
 
 map = Map("mapright.txt", roughStartX, roughStartY)
 camera = Camera(running_nuc, resizeWidth, resizeHeight, preBlur, postBlur)
@@ -92,6 +92,8 @@ def init():
 
 
 init()
+
+act.waitDrop()
 
 act.turnToStack(Movement.Spin, stackOrder[0])
 act.moveUptoStack(stackOrder[0])
