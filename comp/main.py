@@ -93,9 +93,6 @@ def init():
 
 init()
 
-while True:
-    ...
-
 act.turnToStack(Movement.Spin, stackOrder[0])
 act.moveUptoStack(stackOrder[0])
 act.alignCamera()
